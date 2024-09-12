@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+.canvas{
+    /* background: #000; */
+    display: flex;
+}
+.button{
+    height: 100px;
+    width: 100px;
+    margin-left: 1rem;
+    border-radius: 1rem;
+    border: 2px solid black;
+}
+#grey{
+    background: grey;
+}
+#white{
+background: #fff;
+
+}
+#blue{
+    background: blue;
+}
+#yellow{
+    background: yellow;
+}
+</style>
+<body>
+    <nav>
+        <a href="/" aria-current="page">Home</a>
+        <a href="_blank" href="https://googel.com-">Yourtube</a>
+    </nav>
+    <h1>color pikker switwher</h1>  
+    <div class="canvas">
+      <span class="button" id="grey"></span>
+      <span class="button" id="white"></span>
+      <span class="button" id="blue"></span>
+      <span class="button" id="yellow"></span> 
+    </div>
+    <h2>Lorem ipsum dolor sit amet consectetur.</h2> 
+    <span>Lorem ipsum, dolor sit amet consectetur adipisicing.</span>    
+</body>
+<script>
+   const button= document.querySelectorAll('.button')
+   const body = document.querySelector('body')
+//    EVENTS
+button.forEach(function(button)  {
+
+button.addEventListener('click', function(e){
+   if (e.target.id === 'grey'){
+    body.style.backgroundColor = e.target.id
+   }
+   if (e.target.id === 'white'){
+    body.style.backgroundColor = e.target.id
+   }
+   if (e.target.id === 'blue'){
+    body.style.backgroundColor = e.target.id
+   }
+   if (e.target.id === 'yellow'){
+    body.style.backgroundColor = e.target.id
+   }
+})
+
+})
+</script>
+</html>
