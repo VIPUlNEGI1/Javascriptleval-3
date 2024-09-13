@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+        <nav>
+            <a href="/" aria-current="page">Home</a>
+            <a href="_blank" href="https://googel.com-">Yourtube</a>
+        </nav>
+ <div class="center">
+    <div id="banner"><span>your local time</span></div>
+    <div id="clock"></div>
+ </div>
+</body>
+<script>
+    // console.log(date.toLocaleTimeString())
+
+    const clock = document.getElementById('clock');
+    // this setinterval is used to upadte the time every secound
+    setInterval(function() {
+         let date = new Date();
+     clock.innerHTML = date.toLocaleTimeString
+    //  toLocaleTimeString is the a attrubute wihch is help to show real time
+     ();
+    }, 1000)
+    // and this 1000 is given time wihich is  deside  time update 
+</script>
+</html>
