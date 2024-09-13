@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="/" aria-current="page">Home</a>
+      <a target="_blank" href="https://www.googel.com">Youtube channel</a>
+    </nav>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+
+        <form action="">
+            <p><label for="">Height in CM:</label><input type="text" id="height"></p>
+            <p><label for="">Height in KG:</label><input type="text" id="weight"></p>
+            <button>Calculate</button>
+            <div id="results"></div> 
+            <div id="weight-guide">
+                <h3>BMI weight-guide </h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+            </div>
+
+        </form>
+    </div>
+</body>
+<script>
+    const form=document.querySelector('form')
+
+    form.addEventListener('submit', function(e){
+    //    this e.preventDefault is used to stop the proccess  form value save the server because there have no server
+        e.preventDefault()
+        // this passInt is used to pass hight value in int 
+  const hight=  parseInt( document.querySelector('#height').value);
+const weight = parseInt ( document.querySelector('#weight').value);
+const results = document.querySelector('#results');
+   if(hight === '' || hight < 0 || isNaN(hight)){
+  results.innerHTML = `please give the hight ${hight}`
+   } else if(weight === '' || weight < 0 || isNaN(weight)){
+  results.innerHTML = `please give  a valid ${weight}`
+   } else{
+const bmi = (weight / ((hight*hight) / 10000)).toFixed(2)
+
+// how to show the result
+results.innerHTML = `<span>${bmi}</span>`
+   }
+   const h3 = document.querySelector('h3')
+   function evaluateWeight(weight) {
+  if (weight >80) {
+   h3.innerHTML ='over wight'
+  } else if (weight < 50) {
+  h3.innerHTML = 'fit-wit'
+  } else if (weight > 40) {
+  h3.innerHTML = 'not fit'
+  } else {
+    h3.innerHTML = 'idk'
+  }
+}
+evaluateWeight(70)
+  })
+</script>
+</html>
