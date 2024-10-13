@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hi javas cript</h1>
+    <button id="stop"> stop</button>
+</body>
+<script>
+    // this is set time out function which is help to call api
+    //it is used to call the function according to the seted time in thes case it is 2000 
+
+    setTimeout(function(){
+      console.log("vipul is is good boy")  
+    },2000)
+   
+    // this is the  way too make a refference in the asing function
+    const vipulnegi = function(){
+     console.log("vipul") 
+    }
+    setTimeout(vipulnegi,1000)
+
+// how to apply asyng in innerhtml
+ const stop = setTimeout(function(){
+    document.querySelector('h1').innerHTML="hi my love diya panth"
+},2000)
+document.querySelector('#stop').addEventListener('click', function(){
+
+    clearTimeout(stop)
+})
+</script>
+</html>
