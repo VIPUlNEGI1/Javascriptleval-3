@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    
+</body>
+<script>
+    // what is the api : api is used   to make connection (communtcation ) tow different code base code-base or it also used to fech the data into network
+    // in simple world Api is touclking labguage between tow system
+
+    // this XMLHttpRequest isused old code it aimilar to the fech api 
+    const requsturl12="https://api.github.com/users"
+  const xhr=  new XMLHttpRequest()
+//   and this .open  is help to make a api requst
+
+  xhr.open('GET',requsturl12)
+  //   .send is used to call to .open
+  
+  // what is the onreadystatechange is  this type of state which tkake a on function
+  xhr.onreadystatechange = function(){
+    console.log(xhr.readyState);
+  if(xhr.readyState == 4){
+    // note most of the time url se jo bi rasponce aata hai vo string formate main hota hai
+    // that's whay we concert this string into json formate with the help of  JSON.parse
+    const data = JSON.parse(this.responseText)
+    console.log(typeof data)
+   console.log(data.followers)
+  }
+}
+  xhr.send()
+
+</script>
+</html>
